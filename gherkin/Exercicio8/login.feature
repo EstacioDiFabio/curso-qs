@@ -9,8 +9,7 @@ Contexto:
 Dado que eu clique no botão logar
 
 Esquema do Cenário: Usuário insere os dados corretos
-Quando eu insiro o <usuario>
-E a <senha>
+Quando eu insiro o <usuario> e a <senha>
 Então sou direcionado para a tela de checkout
 
 Exemplos:
@@ -21,8 +20,7 @@ Exemplos:
 | "email@teste.com" | "senhaadmin123" | 
 
 Esquema do Cenário: Usuário insere os dados errados
-Quando eu insiro o <usuario>
-E a <senha>
+Quando eu insiro o <usuario> e a <senha>
 Então deve exibir uma mensagem de alerta "Usuário ou senha incorretos"
 
 Exemplos: 

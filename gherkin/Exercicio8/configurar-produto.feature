@@ -10,9 +10,7 @@ Contexto:
 Dado que eu acesse um produto
 
 Cenário: Seleção das caracteristicas do produto
-Quando eu escolher a <cor>
-E o <tamanho> 
-E a <quantidade>
+Quando eu escolher a <cor> o <tamanho> e a <quantidade>
 Então deve permitir selecionar o produto
 
 Cenário: Quantidade de produto correta com 9
