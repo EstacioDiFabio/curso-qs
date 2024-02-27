@@ -6,11 +6,33 @@ describe('Funcionalidade: Produtos', () => {
         cy.visit('http://lojaebac.ebaconline.art.br/produtos/');    
     });
 
-    it('Deve selecionar um produto da lista', () => {
+    it('Deve selecionar o primeiro produto da lista', () => {
+        cy.get('.block-inner')
+            .first()
+            .click();
+
+        cy.get('#tab-title-description > a').contains('Descrição');
+    });
+
+    it('Deve selecionar o último produto da lista', () => {
+        cy.get('.block-inner')
+            .last()
+            .click();
+
+        cy.get('#tab-title-description > a').contains('Descrição');
+    });
+
+    it('Deve selecionar o terceiro produto da lista', () => {
+        cy.get('.block-inner')
+            .eq(3)
+            // .contains('Abominable Hoodie')
+            .click();
+
+        cy.get('#tab-title-description > a').contains('Descrição');
+    });
+
+    it('Deve selecionar um produto específico da lista', () => {
         cy.get('.products > .row')
-            // .first()
-            // .last()
-            // .eq(3)
             .contains('Abominable Hoodie')
             .click();
 
