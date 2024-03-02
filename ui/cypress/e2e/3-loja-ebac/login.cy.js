@@ -45,7 +45,7 @@ describe('Funcionalidade: Login', () => {
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, estacio.fabio (não é estacio.fabio? Sair)')
     });
 
-    it.only('Deve fazer login com sucesso - Usando Fixture', () => {
+    it('Deve fazer login com sucesso - Usando Fixture', () => {
         cy.fixture('perfil').then(dados => {
             cy.get('#username').type(dados.usuario);
             cy.get('#password').type(dados.senha, {log: false});
@@ -54,4 +54,9 @@ describe('Funcionalidade: Login', () => {
             cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, estacio.fabio (não é estacio.fabio? Sair)')
         });
     });
+
+    it('Deve fazer login com sucesso - usando comandos customizados', () => {
+        cy.login('estacio.fabio@ebac.com.br', 'teste@123');
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, estacio.fabio (não é estacio.fabio? Sair)')
+    })
 });
