@@ -1,0 +1,20 @@
+[
+    {
+        "nomeProduto": "Ingrid Running Jacket",
+        "tamanho": "XS",
+        "cor": "Orange",
+        "quantidade": 7
+    },
+    {
+        "nomeProduto": "Daphne Full-Zip Hoodie",
+        "tamanho": "L",
+        "cor": "Purple",
+        "quantidade": 3
+    },
+    {
+        "nomeProduto": "Atlas Fitness Tank",
+        "tamanho": "XG",
+        "cor": "Blue",
+        "quantidade": 12
+    }
+]
