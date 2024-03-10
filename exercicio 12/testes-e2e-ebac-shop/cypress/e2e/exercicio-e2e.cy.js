@@ -1,5 +1,8 @@
 /// <reference types="cypress" />
 
+import produtosPage from '../support/page_objects/produtos.page';
+import checkoutPage from '../support/page_objects/checkout.page';
+
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     /*  Como cliente 
         Quero acessar a Loja EBAC 
@@ -13,9 +16,9 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.visit('/')
     });
 
-    it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
-        //TODO 
+    it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', async () => {
+        produtosPage.adicionarProdutosAoCarrinho();
+        checkoutPage.checkout();
+        checkoutPage.confirm();
     });
-
-
 })
