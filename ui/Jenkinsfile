@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clonar repositorio') {
+            steps {
+                git branch: 'master', url: ''
+            }
+        }
+        stage('Instalar dependencias') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Executar tarefas') {
+            steps {
+                sh 'NO_COLOR=1 npm run test'
+            }
+        }
+    }
+}

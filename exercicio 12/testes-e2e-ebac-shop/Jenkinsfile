@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clonar repositorio') {
+            steps {
+                git branch: 'master', url: ''
+            }
+        }
+        stage('Instalar dependencias') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Abrir cypress') {
+            steps {
+                sh 'NO_COLOR=1 npm run cy:open'
+            }
+        }
+        stage('Executar cypress') {
+            steps {
+                sh 'NO_COLOR=1 npm run cy:run'
+            }
+        }
+    }
+}
